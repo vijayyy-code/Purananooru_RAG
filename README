@@ -1,0 +1,105 @@
+# Purananooru_RAG
+
+**AI-powered Retrieval-Augmented Generation (RAG) system** for **Sangam literature**, focused on **Puranānūru poems**.  
+This project allows querying, summarizing, and exploring ancient Tamil Sangam poems using modern AI pipelines.
+
+---
+
+## Overview
+
+This project implements a **RAG pipeline** for Sangam texts, particularly **Puranānūru**.  
+It leverages:
+
+- **Vector database** for storing embeddings  
+- **LLM integration** for generating summaries and explanations  
+- **Chunking** and **embedding storage** for efficient retrieval  
+
+Designed for **research, learning, and AI-assisted exploration of Tamil literature**.
+
+---
+
+## Features
+
+- Load and process Sangam texts (`sangam.txt`, `sangam.xlsx`)  
+- Generate embeddings for poems and store in vector DB  
+- Query poems in Tamil or English using AI  
+- Summarize or explain ancient poems in modern English  
+- Secure handling of API keys via `.env`  
+
+---
+
+## Example
+
+### Original Tamil Poem:
+உரை நூல்:
+புறநானூறு – ஔவை துரைசாமி – தமிழ் மண் பதிப்பகம், சென்னை
+
+புறநானூறு 1, பாடியவர்: பெருந்தேவனார், பாடப்பட்டோன்: இறைவன்
+
+கண்ணி கார் நறுங்கொன்றை, காமர்
+வண்ண மார்பின் தாருங் கொன்றை;
+ஊர்தி வால் வெள் ஏறே, சிறந்த
+சீர் கெழு கொடியும் அவ்வேறு என்ப;
+...
+
+shell
+Copy code
+
+### English Explanation:
+Puranānūru 1, Poet Perunthēvanār wrote this many centuries after the Sangam poems.
+
+His kondrai flower strand has rain fragrance. He wears a
+kondrai garland on his pretty colored chest. He rides on a
+pure white bull and his splendid flag also has the bull.
+...
+
+yaml
+Copy code
+
+**Notes:**  
+This poet also wrote invocation poems for Natrinai, Ainkurunūru, Akanānūru, and Kurunthokai. Puranānūru is the only anthology where these poems are included in the total count.
+
+---
+
+## Quick Start
+
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/vijayyy-code/Purananooru_RAG.git
+cd Purananooru_RAG
+python -m venv venv && venv\Scripts\activate && pip install -r requirements.txt
+Linux/Mac users:
+source venv/bin/activate instead of venv\Scripts\activate
+
+Set up your .env file (DO NOT commit this):
+
+env
+Copy code
+API_KEY=your_api_key_here
+Usage
+Run the main RAG pipeline:
+
+bash
+Copy code
+python app.py
+Other utility scripts:
+
+check.py → verify embeddings
+
+indices_cache.pkl → cached vector indices
+
+sangam.txt / sangam.xlsx → source poems
+
+Folder Structure
+bash
+Copy code
+Purananooru_RAG/
+├── venv/                # virtual environment (ignored)
+├── .env                 # your API key (ignored)
+├── app.py
+├── check.py
+├── indices_cache.pkl    # cached embeddings
+├── requirements.txt
+├── sangam.txt
+├── sangam.xlsx
